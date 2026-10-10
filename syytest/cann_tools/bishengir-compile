@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+"""Use CANN A5; filter the TA option unsupported by CANN 9.1."""
+import os
+import sys
+from pathlib import Path
+
+compiler = Path(os.environ.get("SYY_CANN_BIN", "/usr/local/Ascend/cann-9.1.0/tools/bishengir/bin")) / "bishengir-compile-a5"
+args = [arg for arg in sys.argv[1:] if not arg.startswith("--enable-optimized-metaop=")]
+os.execv(str(compiler), [str(compiler), *args])

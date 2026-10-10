@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+cache*/
+dump*/
+ir_artifacts/
+*.log
+*.xml
+*.tar.gz
+*.ttadapter
+*.bcmlir
